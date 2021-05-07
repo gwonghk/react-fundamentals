@@ -39,3 +39,7 @@
   width: 100px;
   text-align: right;
 }
+
+body {
+  background-color: black;
+}
