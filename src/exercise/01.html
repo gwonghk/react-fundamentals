@@ -12,14 +12,21 @@
 
 <!-- 🐨 Set the div's textContent to 'Hello World' and className to 'container' -->
 <!--   💰 div.textContent = '...' -->
-    
+
 <!-- 🐨 Append the div to the root div using `append` -->
 <!--   💰 document.getElementById('root') -->
 <!--   📜 https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append -->
 <body>
-    <div id="root"></div>
 </body>
 
 <script type="module">
-    document.body.style.background = 'black';
+    const root = document.createElement('div');
+    root.id = 'root';
+    document.body.appendChild(root);
+
+    const divy = document.createElement('div');
+    divy.textContent = 'Hello World';
+    divy.className = 'container';
+    document.getElementById('root').appendChild(divy);
+    // document.body.style.background = 'black';
 </script>
