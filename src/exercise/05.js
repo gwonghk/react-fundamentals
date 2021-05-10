@@ -1,8 +1,8 @@
 // Styling
 // http://localhost:3000/isolated/exercise/05.js
 
-import * as React from 'react'
-import '../box-styles.css'
+import * as React from 'react';
+import '../box-styles.css';
 
 // 💰 Use the className for the size and style (backgroundColor) for the color
 // 💰 each of the elements should also have the "box" className applied
@@ -12,18 +12,26 @@ import '../box-styles.css'
 
 // 🐨 add a style prop to each of them as well so their background color
 // matches what the text says it should be as well as `fontStyle: 'italic'`
-const smallBox = <div>small lightblue box</div>
-const mediumBox = <div>medium pink box</div>
-const largeBox = <div>large orange box</div>
+const smallBox = <div style={{fontStyle: 'italic', backgroundColor: 'lightblue'}} className='box box--small'>small lightblue box</div>;
+const mediumBox = <div style={{fontStyle: 'italic', backgroundColor: 'pink'}} className='box box--medium'>medium pink box</div>;
+const largeBox = <div style={{fontStyle: 'italic', backgroundColor: 'orange'}} className='box box--large'>large orange box</div>;
+
+const Box = ({ className, style, size, ...rest }) => <div className={`box box--${size} ${className}`} style={{ fontStyle: 'italic', ...style }} {...rest} />;
+
 
 function App() {
   return (
-    <div>
-      {smallBox}
-      {mediumBox}
-      {largeBox}
-    </div>
-  )
+    <>
+      <div>
+        {smallBox}
+        {mediumBox}
+        {largeBox}
+      </div>
+      <Box size="small" style={{backgroundColor: 'lightblue'}}>
+        small lightblue box
+      </Box>
+    </>
+  );
 }
 
-export default App
+export default App;
